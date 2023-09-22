@@ -1,0 +1,52 @@
+C51 COMPILER V9.54   KEYBOARD                                                              09/21/2023 21:38:39 PAGE 1   
+
+
+C51 COMPILER V9.54, COMPILATION OF MODULE KEYBOARD
+OBJECT MODULE PLACED IN .\Objects\keyboard.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE keyboard.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\
+                    -keyboard.lst) TABS(2) OBJECT(.\Objects\keyboard.obj)
+
+line level    source
+
+   1          #include "keyboard.h"
+   2          unsigned char code key_board_table[16]="010100000000000";//"789A456B123CF0ED";
+   3          unsigned char getvalue()
+   4          {
+   5   1        unsigned char sum=0;
+   6   1        KEY=0xf0;//列4行4
+   7   1        if(KEY!=0xf0)
+   8   1        {
+   9   2          switch(KEY)//列扫描
+  10   2          {
+  11   3            case 0xe0:sum=1;break;
+  12   3            case 0xd0:sum=2;break;
+  13   3            case 0xb0:sum=3;break;
+  14   3            case 0x70:sum=4;break;
+  15   3          }
+  16   2          KEY=0x0f;
+  17   2          switch(KEY)//行扫描
+  18   2          {
+  19   3            case 0x0e:sum=sum;break;
+  20   3            case 0x0d:sum=sum+4;break;
+  21   3            case 0x0b:sum=sum+8;break;
+  22   3            case 0x07:sum=sum+12;break;     
+  23   3          }
+  24   2          while(KEY!=0x0f);
+  25   2          return key_board_table[sum-1];
+  26   2        }
+  27   1        else return 255;
+  28   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    105    ----
+   CONSTANT SIZE    =     16    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       1
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
