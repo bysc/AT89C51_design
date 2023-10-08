@@ -6,12 +6,6 @@
 #include "keyboard.h"
 
 void welcome();
-void biToHEX(unsigned int *BI,unsigned char *HE,char index);
-void update(unsigned int *BI,unsigned char *HE,char *index,unsigned char press);	
-
-
-
-
 
 
 #endif

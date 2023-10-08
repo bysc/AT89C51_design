@@ -1,5 +1,5 @@
 #include "keyboard.h"
-unsigned char code key_board_table[16]="010100000000000";//"789A456B123CF0ED";
+unsigned char code key_board_table[16]="01c=";//"789A456B123CF0ED";
 unsigned char getvalue()
 {
 	unsigned char sum=0;

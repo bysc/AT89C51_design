@@ -1,4 +1,4 @@
-C51 COMPILER V9.54   LCD1602                                                               09/20/2023 16:09:41 PAGE 1   
+C51 COMPILER V9.54   LCD1602                                                               10/08/2023 14:41:11 PAGE 1   
 
 
 C51 COMPILER V9.54, COMPILATION OF MODULE LCD1602
@@ -62,7 +62,7 @@ line level    source
   52   1        writecmd(0x06);//光标右移，不整体移动
   53   1        writecmd(0x01);//清屏
   54   1      }
-C51 COMPILER V9.54   LCD1602                                                               09/20/2023 16:09:41 PAGE 2   
+C51 COMPILER V9.54   LCD1602                                                               10/08/2023 14:41:11 PAGE 2   
 
 
 
